@@ -1,0 +1,10 @@
+[Unit]
+Description=Updates StevenBlack's hosts
+Wants=stevenblack-systemd-timer.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/podman run --pull always --rm -it -v /etc/hosts:/etc/hosts ghcr.io/stevenblack/hosts:latest updateHostsFile.py --auto --replace --backup --nounifiedhosts --extensions porn
+
+[Install]
+WantedBy=multi-user.target

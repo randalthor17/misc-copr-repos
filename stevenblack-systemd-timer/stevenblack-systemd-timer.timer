@@ -1,0 +1,10 @@
+[Unit]
+Description=Logs some system statistics to the systemd journal
+Requires=stevenblack-systemd-timer.service
+
+[Timer]
+Unit=stevenblack-systemd-timer.service
+OnCalendar=Weekly
+
+[Install]
+WantedBy=timers.target
