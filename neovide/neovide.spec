@@ -51,8 +51,8 @@ cargo build --release --verbose
 
 
 %install
-install -Dm0755 'target/release/neovide' "%{buildroot}%{_bindir}/"
-install -Dm0644 'assets/neovide.svg' "%{buildroot}%{_datadir}/icons/hicolor/scalable/apps/"
+install -Dm0755 'target/release/neovide' "%{buildroot}%{_bindir}/neovide"
+install -Dm0644 'assets/neovide.svg' "%{buildroot}%{_datadir}/icons/hicolor/scalable/apps/neovide.svg"
 desktop-file-install --dir="%{buildroot}%{_datadir}/applications" 'assets/neovide.desktop'
 desktop-file-validate --dir="%{buildroot}%{_datadir}/applications/neovide.desktop"
 
@@ -60,7 +60,7 @@ desktop-file-validate --dir="%{buildroot}%{_datadir}/applications/neovide.deskto
 %files
 %license LICENSE
 %{_bindir}/neovide
-%{_datadir}/icons/hicolor/scalable/apps/neovide.
+%{_datadir}/icons/hicolor/scalable/apps/neovide.svg
 %{_datadir}/applications/neovide.desktop
 
 
