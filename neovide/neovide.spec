@@ -54,7 +54,7 @@ cargo build --release --verbose
 install -Dm0755 'target/release/neovide' "%{buildroot}%{_bindir}/neovide"
 install -Dm0644 'assets/neovide.svg' "%{buildroot}%{_datadir}/icons/hicolor/scalable/apps/neovide.svg"
 desktop-file-install --dir="%{buildroot}%{_datadir}/applications" 'assets/neovide.desktop'
-desktop-file-validate --dir="%{buildroot}%{_datadir}/applications/neovide.desktop"
+desktop-file-validate "%{buildroot}%{_datadir}/applications/neovide.desktop"
 
 
 %files
